@@ -4,9 +4,10 @@ A Raspberry Pi 0 will be used to add additional functions to a mindtank's built-
 Demo: 
 
 ## Parts List
-[Raspberry Pi 3 B] https://www.raspberrypi.org/products/raspberry-pi-3-model-b/?resellerType=home
-MIND Tank
-Gas sensors
+[Raspberry Pi 3 B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/?resellerType=home)
+[MIND Tank](https://www.vincross.com/mindkit/index.html)
+[Carbon Monoxide Sensor](https://www.amazon.com/gp/product/B016KABTDK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B016KABTDK&linkCode=as2&tag=geek07f-20&linkId=d1923ce3e7e3300909bcb6c569e342a7)
+[Methane Sensor](https://www.amazon.com/gp/product/B016KABTDK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B016KABTDK&linkCode=as2&tag=geek07f-20&linkId=d1923ce3e7e3300909bcb6c569e342a7)
 Laser Temperature Sensor
 Camera
 RGB LED
