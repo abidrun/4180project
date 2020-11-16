@@ -18,6 +18,16 @@ Demo:
 
 [RGB LED](https://www.sparkfun.com/products/105)
 
+## How to Use
+
+
+
+## Schematic
+
+
+## Source Code
+
+
 ## Team Members
 - Abigail Drun
 - De-pei Ho
