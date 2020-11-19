@@ -1,5 +1,13 @@
 ## 4180 Project - Gas Detection Rover
-A Raspberry Pi 0 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the custom web page, while the chemical sensors on the sides will print the concentration of their corresponding gas next to the video feed. A laser temperature sensor will be used to detect human temperature, which will also be printed on the web page. RGB LED will indicate whether the chemical sensor is reading over a certain amount of concentration.
+A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the custom web page, while the chemical sensors on the sides will print the concentration of their corresponding gas next to the video feed. A laser temperature sensor will be used to detect human temperature, which will also be printed on the web page. A red LED will indicate whether the chemical sensor is reading over 30 degrees Celsius.
+
+- Connect and control through mobile app
+- Camera with video and sensor feedback to controlling computer via SSH
+- Red LED 
+
+
+
+(Changes: Red LED concentration -> temperature instead for demo purposes)
 
 Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17W0KNmnumCjsVagRdHJYt3gas/edit?usp=sharing
 
@@ -33,11 +41,12 @@ Demo:
 ## How to Use
 Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c)
 
-1. Connect the Raspberry Pi to a monitor.
-2. This screen will pop up:
-3. Enter the IP address of the controlling computer. 
-4. Enter these commands into Terminal.
-5. The video and sensor information should pop up automatically.
+1. Using the IP address of the Raspberry Pi, SSH to the Raspberry Pi using the controlling computer.
+2. Connect the Raspberry Pi to a monitor.
+3. This screen will pop up:
+4. Enter the IP address of the controlling computer. 
+5. Enter these commands into Terminal.
+6. The video and sensor information should pop up automatically.
 
 
 
