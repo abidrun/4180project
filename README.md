@@ -5,6 +5,12 @@ Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17
 
 Demo: 
 
+## Team Members
+- Abigail Drun
+- De-pei Ho
+- Manan Patel
+- Vandan Patel
+
 ## Parts List
 [Raspberry Pi 3 B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/?resellerType=home)
 
@@ -20,6 +26,10 @@ Demo:
 
 [RGB LED](https://www.sparkfun.com/products/105)
 
+[Level Shifter](https://www.amazon.com/KeeYees-Channels-Converter-Bi-Directional-Shifter/dp/B07LG646VS/ref=sr_1_2?dchild=1&keywords=level+shifter&qid=1605756694&sr=8-2)
+
+[ADC](https://www.adafruit.com/product/856)
+
 ## How to Use
 
 
@@ -30,8 +40,3 @@ Demo:
 ## Source Code
 
 
-## Team Members
-- Abigail Drun
-- De-pei Ho
-- Manan Patel
-- Vandan Patel
