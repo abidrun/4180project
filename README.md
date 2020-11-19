@@ -12,7 +12,7 @@ Demo:
 - Vandan Patel
 
 ## Parts List
-[Raspberry Pi 3 B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/?resellerType=home)
+[Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?resellerType=home)
 
 [MIND Tank](https://www.vincross.com/mindkit/index.html)
 
