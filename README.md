@@ -31,6 +31,13 @@ Demo:
 [ADC](https://www.adafruit.com/product/856)
 
 ## How to Use
+Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c)
+
+1. Connect the Raspberry Pi to a monitor.
+2. This screen will pop up:
+3. Enter the IP address of the controlling computer. 
+4. Enter these commands into Terminal.
+5. The video and sensor information should pop up automatically.
 
 
 
