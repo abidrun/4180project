@@ -24,7 +24,7 @@ Demo:
 
 [Pi Camera V2](https://www.raspberrypi.org/products/pi-noir-camera-v2/?resellerType=home)
 
-[RGB LED](https://www.sparkfun.com/products/105)
+[Red LED](https://www.sparkfun.com/products/9590)
 
 [Level Shifter](https://www.amazon.com/KeeYees-Channels-Converter-Bi-Directional-Shifter/dp/B07LG646VS/ref=sr_1_2?dchild=1&keywords=level+shifter&qid=1605756694&sr=8-2)
 
