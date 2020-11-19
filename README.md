@@ -35,7 +35,7 @@ Demo:
 
 
 ## Schematic
-
+![Schematic](https://raw.githubusercontent.com/abidrun/4180project/main/4180ProjectSchematic.jpg)
 
 ## Source Code
 Source code found [here](https://github.com/abidrun/4180project/blob/main/mq-7.py).
