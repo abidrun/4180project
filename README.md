@@ -47,6 +47,7 @@ Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation
 4. Enter the IP address of the controlling computer. 
 5. Enter these commands into Terminal.
 6. The video and sensor information should pop up automatically.
+7. Unplug the Raspberry Pi now that everything is verified to work correctly.
 
 
 
