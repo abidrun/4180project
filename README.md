@@ -5,8 +5,12 @@ A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-
 - Camera with video and sensor feedback to controlling computer via SSH
 - Red LED 
 
+<img src="https://github.com/abidrun/4180project/blob/main/Gas%20Rover.jpg" alt="" width="400" height="400">
 
+## Changes to Original Design
 
+The following changes were made to the original proposal due to demo constraints:
+- 
 (Changes: Red LED concentration -> temperature instead for demo purposes)
 
 Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17W0KNmnumCjsVagRdHJYt3gas/edit?usp=sharing
