@@ -77,7 +77,15 @@ Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation
 <img src="https://github.com/abidrun/4180project/blob/main/gstreamScreen.jpg" alt="" width="400">
 
 4. Enter the IP address of the controlling computer. 
-5. Enter [these](https://github.com/abidrun/4180project/blob/main/gstreamRPI.rtf) commands into Terminal.
+5. Enter these commands into Terminal.
+```
+ON MAC:
+gst-launch-1.0 -v udpsrc port=9000 caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264' ! rtph264depay ! video/x-h264,width=640,height=480,framerate=30/1 ! h264parse ! avdec_h264 ! videoflip method=rotate-180 ! videoconvert ! autovideosink sync=false
+
+
+ON RPI (USING MAC IP):
+raspivid -n -w 640 -h 480 -t 0 -o - | gst-launch-1.0 -v fdsrc ! h264parse ! rtph264pay config-interval=10 pt=96 ! udpsink host=192.168.199.1 port=9000
+```
 6. The video and sensor information should pop up automatically.
 7. Unplug the Raspberry Pi now that everything is verified to work correctly.
 
