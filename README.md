@@ -1,17 +1,15 @@
 ## 4180 Project - Gas Detection Rover
-A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the custom web page, while the chemical sensors on the sides will print the concentration of their corresponding gas next to the video feed. A laser temperature sensor will be used to detect human temperature, which will also be printed on the web page. A red LED will indicate whether the chemical sensor is reading over 30 degrees Celsius.
-
-- Connect and control through mobile app
-- Camera with video and sensor feedback to controlling computer via SSH
-- Red LED 
+A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the controlling computer, while the chemical sensors on the sides will print the concentration of their corresponding gas. A laser temperature sensor will be used to detect human temperature, which will also be printed on the feed. A red LED will indicate whether the chemical sensor is reading over 30 degrees Celsius.
 
 <img src="https://github.com/abidrun/4180project/blob/main/Gas%20Rover.jpg" alt="" width="400" height="400">
 
-## Changes to Original Design
+## Changes from Original Proposal
+The following changes were made to the original proposal:
 
-The following changes were made to the original proposal due to demo constraints:
-- 
-(Changes: Red LED concentration -> temperature instead for demo purposes)
+- A red LED was used instead of a RGB LED since only one color was needed.
+- Instead of the red LED lighting up after a specific gas concentration, it was coded to light up after a specific temperature instead; this was decided since a high gas concentration could not be safely demonstrated.
+- A webpage was not set up.
+- A Raspberry Pi 4 was used instead of the Raspberry Pi 0 due to its additional capabilities.
 
 Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17W0KNmnumCjsVagRdHJYt3gas/edit?usp=sharing
 
