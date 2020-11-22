@@ -5,6 +5,7 @@ A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-
 
 ## Demo
 
+Click to play.
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/puAbpk_hmp0/0.jpg)](https://youtu.be/puAbpk_hmp0)
 
 ## Changes from Original Proposal
