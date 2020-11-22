@@ -294,7 +294,7 @@ if __name__ == "__main__":
     while True:
         irTemperature = tn9.getIRTemperature()
         ambientTemperature = tn9.getAmbientTemperature()
-        if irTemperature > 50:
+        if irTemperature > 30:
             led.on()
         else:
             led.off()
