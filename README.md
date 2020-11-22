@@ -71,7 +71,7 @@ Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17
 ## How to Use
 Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c)
 
-1. Using the IP address of the Raspberry Pi, SSH to the Raspberry Pi using the controlling computer.
+1. Using the IP address of the Raspberry Pi, [SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) to the Raspberry Pi using the controlling computer.
 2. Connect the Raspberry Pi to a monitor.
 3. This screen will pop up:
 <img src="https://github.com/abidrun/4180project/blob/main/gstreamScreen.jpg" alt="" width="400">
