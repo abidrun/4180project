@@ -46,6 +46,8 @@ Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation
 1. Using the IP address of the Raspberry Pi, SSH to the Raspberry Pi using the controlling computer.
 2. Connect the Raspberry Pi to a monitor.
 3. This screen will pop up:
+<img src="https://github.com/abidrun/4180project/blob/main/gstreamScreen.jpg" alt="" width="400" height="400">
+
 4. Enter the IP address of the controlling computer. 
 5. Enter [these](https://github.com/abidrun/4180project/blob/main/gstreamRPI.rtf) commands into Terminal.
 6. The video and sensor information should pop up automatically.
