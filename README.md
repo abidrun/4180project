@@ -17,8 +17,6 @@ The following changes were made to the original proposal:
 
 Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17W0KNmnumCjsVagRdHJYt3gas/edit?usp=sharing
 
-Demo: 
-
 ## Team Members
 - Abigail Drun
 - De-pei Ho
