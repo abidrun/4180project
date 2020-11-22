@@ -3,6 +3,10 @@ A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-
 
 <img src="https://github.com/abidrun/4180project/blob/main/Gas%20Rover.jpg" alt="" width="400" height="400">
 
+## Demo
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/puAbpk_hmp0/0.jpg)](https://youtu.be/puAbpk_hmp0)
+
 ## Changes from Original Proposal
 The following changes were made to the original proposal:
 
