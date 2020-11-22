@@ -85,3 +85,211 @@ Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation
 
 ## Schematic
 ![Schematic](https://raw.githubusercontent.com/abidrun/4180project/main/4180ProjectSchematic.jpg)
+
+## Code
+
+### Gas Sensor Code
+```python
+import RPi.GPIO as GPIO
+import time
+
+# change these as desired - they're the pins connected from the
+# SPI port on the ADC to the Cobbler
+SPICLK = 11
+SPIMISO = 9
+SPIMOSI = 10
+SPICS = 8
+mq7_dpin = 26
+mq7_apin = 0
+mq4_dpin = 20
+mq4_apin = 1
+
+#port init
+def init():
+         GPIO.setwarnings(False)
+         GPIO.cleanup()			#clean up at the end of your script
+         GPIO.setmode(GPIO.BCM)		#to specify whilch pin numbering system
+         # set up the SPI interface pins
+         GPIO.setup(SPIMOSI, GPIO.OUT)
+         GPIO.setup(SPIMISO, GPIO.IN)
+         GPIO.setup(SPICLK, GPIO.OUT)
+         GPIO.setup(SPICS, GPIO.OUT)
+         GPIO.setup(mq7_dpin,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
+         GPIO.setup(mq4_dpin,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
+
+#read SPI data from MCP3008(or MCP3204) chip,8 possible adc's (0 thru 7)
+def readadc(adcnum, clockpin, mosipin, misopin, cspin):
+        if ((adcnum > 7) or (adcnum < 0)):
+                return -1
+        GPIO.output(cspin, True)	
+
+        GPIO.output(clockpin, False)  # start clock low
+        GPIO.output(cspin, False)     # bring CS low
+
+        commandout = adcnum
+        commandout |= 0x18  # start bit + single-ended bit
+        commandout <<= 3    # we only need to send 5 bits here
+        for i in range(5):
+                if (commandout & 0x80):
+                        GPIO.output(mosipin, True)
+                else:
+                        GPIO.output(mosipin, False)
+                commandout <<= 1
+                GPIO.output(clockpin, True)
+                GPIO.output(clockpin, False)
+
+        adcout = 0
+        # read in one empty bit, one null bit and 10 ADC bits
+        for i in range(12):
+                GPIO.output(clockpin, True)
+                GPIO.output(clockpin, False)
+                adcout <<= 1
+                if (GPIO.input(misopin)):
+                        adcout |= 0x1
+
+        GPIO.output(cspin, True)
+        
+        adcout >>= 1       # first bit is 'null' so drop it
+        return adcout
+#main ioop
+def main():
+         init()
+         print"please wait..."
+         time.sleep(20)
+         while True:
+                  COlevel=readadc(mq7_apin, SPICLK, SPIMOSI, SPIMISO, SPICS)
+                  CH4level=readadc(mq4_apin, SPICLK, SPIMOSI, SPIMISO, SPICS)
+
+                  if GPIO.input(mq7_dpin) or GPIO.input(mq4_dpin):
+                           print("Nothing leaks")
+                           time.sleep(0.5)
+                  else:
+                           print("Gas detected")
+                           print"Current CO density is:" +str("%.2f"%((COlevel/1024.)*100))+" %"
+                           print"Current CH4 density is:" +str("%.2f"%((CH4level/1024.)*100))+" %"
+                           time.sleep(0.5)
+
+if __name__ =='__main__':
+         try:
+                  main()
+                  pass
+         except KeyboardInterrupt:
+                  pass
+
+GPIO.cleanup()
+```
+### Temperature Sensor Code
+```python
+import wiringpi as wp
+from gpiozero import LED
+from time import sleep
+
+led = LED(16)
+
+class TN9():
+
+    __IRTEMP_DATA_SIZE = 5
+    __IRTEMP_TIMEOUT = 2000  # milliseconds
+    # Each 5-byte data packet from the IRTemp is tagged with one of these
+    __IRTEMP_DATA_AMBIENT = 0x66
+    __IRTEMP_DATA_IR =      0x4C
+    #__IRTEMP_DATA_JUNK =    0x53; # ignored, contains version info perhaps?
+
+    def __init__(self, pinAcquire, pinClock, pinData, scale):
+        self.__pinAcquire = pinAcquire
+        self.__pinClock =   pinClock
+        self.__pinData =    pinData
+        self.__scale =      scale
+
+        # One of the following MUST be called before using IO functions:
+        #wp.wiringPiSetup()      # For sequential pin numbering
+        # OR
+        #wp.wiringPiSetupSys()   # For /sys/class/gpio with GPIO pin numbering
+        # OR
+        wp.wiringPiSetupGpio()  # For GPIO pin numbering
+
+        if self.__pinAcquire != -1:
+            wp.pinMode(self.__pinAcquire, 1)
+            wp.digitalWrite(self.__pinAcquire, 1)
+
+        wp.pinMode(self.__pinClock,   0)
+        wp.pinMode(self.__pinData,    0)
+
+        wp.digitalWrite(self.__pinClock,   1)
+        wp.digitalWrite(self.__pinData,    1)
+
+        self.__sensorEnable(False)
+
+    def getAmbientTemperature(self):
+        return self.__getTemperature(self.__IRTEMP_DATA_AMBIENT)
+
+    def getIRTemperature(self):
+        return self.__getTemperature(self.__IRTEMP_DATA_IR)
+
+    def __getTemperature(self, dataType):
+        timeout = wp.millis() + self.__IRTEMP_TIMEOUT
+        self.__sensorEnable(True)
+
+        while True:
+            data = [0] * self.__IRTEMP_DATA_SIZE
+            for data_byte in range(0, self.__IRTEMP_DATA_SIZE, 1):
+                for data_bit in range(7, -1, -1):
+                    # Clock idles high, data changes on falling edge, sample on rising edge
+                    while wp.digitalRead(self.__pinClock) == 1 and wp.millis() < timeout:
+                        pass # Wait for falling edge
+                    while wp.digitalRead(self.__pinClock) == 0 and wp.millis() < timeout:
+                        pass # Wait for rising edge to sample
+                    if wp.digitalRead(self.__pinData):
+                        data[data_byte] |= 1 << data_bit
+            if wp.millis() >= timeout:
+                self.__sensorEnable(False)
+                return float('nan')
+
+            if data[0] == dataType and self.__validData(data):
+                self.__sensorEnable(False)
+                temperature = self.__decodeTemperature(data);
+                if self.__scale == "FAHRENHEIT":
+                    temperature = self.__convertFahrenheit(temperature)
+                return temperature
+
+    def __convertFahrenheit(self, celsius):
+        return celsius * 9 / 5 + 32
+
+    def __decodeTemperature(self, data):
+        msb = data[1] << 8
+        lsb = data[2]
+        return (msb + lsb) / 16.0 - 273.15
+
+    def __sensorEnable(self, state):
+        if self.__pinAcquire != -1:
+            wp.digitalWrite(self.__pinAcquire, not state)
+
+    def __validData(self, data):
+        checksum = (data[0] + data[1] + data[2]) & 0xff
+        return data[3] == checksum  and  data[4] == 0x0d
+
+
+if __name__ == "__main__":
+
+    from time import sleep
+
+    PIN_DATA    = 25 # Choose any pins you like for these
+    PIN_CLOCK   = 6
+    PIN_ACQUIRE = 5
+    SCALE="CELSIUS" # Options are CELSIUS, FAHRENHEIT
+
+    SCALE_UNITS = {"CELSIUS" : "°C",
+                   "FAHRENHEIT" : "°F"}
+
+    tn9 = TN9(PIN_ACQUIRE, PIN_CLOCK, PIN_DATA, SCALE)
+
+    while True:
+        irTemperature = tn9.getIRTemperature()
+        ambientTemperature = tn9.getAmbientTemperature()
+        if irTemperature > 50:
+            led.on()
+        else:
+            led.off()
+        print("Object temperature = %.1f %s, Ambient temperature = %.1f %s" % (irTemperature, SCALE_UNITS[SCALE], ambientTemperature, SCALE_UNITS[SCALE]))
+        sleep(1)
+```
