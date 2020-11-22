@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-#!/usr/bin/python
-#
-# Measure object and ambient temperature using TN9 sensor
-#
-# Author : Edoardo Raparelli
-# Date   : 2019/11/11
-# -----------------------
-
 import wiringpi as wp
 from gpiozero import LED
 from time import sleep
