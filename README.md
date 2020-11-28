@@ -73,7 +73,9 @@ The following changes were made to the original proposal:
 [ADC](https://www.adafruit.com/product/856)
 
 ## How to Use
-Before use: Install [gst launch](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c)
+Before use: 
+Install [gst launch](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c)
+Install the [iPhone](https://apps.apple.com/app/mind-kit/id1480797076?l=en) or [Android](https://play.google.com/store/apps/details?id=com.vincross.mindkit) app to set up the MIND Tank control.
 
 1. Using the IP address of the Raspberry Pi, [SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) to the Raspberry Pi using the controlling computer.
 2. Connect the Raspberry Pi to a monitor.
