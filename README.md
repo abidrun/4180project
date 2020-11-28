@@ -98,6 +98,7 @@ raspivid -n -w 640 -h 480 -t 0 -o - | gst-launch-1.0 -v fdsrc ! h264parse ! rtph
 ```
 6. The video and sensor information should pop up automatically.
 7. Unplug the Raspberry Pi now that everything is verified to work correctly.
+8. The gas rover is now ready for use; control it using the mobile app and the camera and sensor data will show up on the controlling computer.
 
 
 
