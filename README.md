@@ -33,6 +33,12 @@ Project features:
     Under 30C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Above 30C
 
 
+## Presentation
+
+Click to play.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jCLSl4soMps/0.jpg)](https://youtu.be/jCLSl4soMps)
+
 ## Changes from Original Proposal
 The following changes were made to the original proposal:
 
@@ -40,8 +46,6 @@ The following changes were made to the original proposal:
 - Instead of the red LED lighting up after a specific gas concentration, it was coded to light up after a specific temperature instead; this was decided since a high gas concentration could not be safely demonstrated.
 - Due to authentication issues, a webpage was not set up and data was sent over SSH instead.
 - A Raspberry Pi 4 was used instead of the Raspberry Pi 0 due to its additional capabilities.
-
-Presentation slides: https://docs.google.com/presentation/d/1capM-I1cgk78rcUiF17W0KNmnumCjsVagRdHJYt3gas/edit?usp=sharing
 
 ## Team Members
 - Abigail Drun
