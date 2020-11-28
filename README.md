@@ -5,7 +5,7 @@ A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-
 
 ## Demo
 
-Click to play.
+Click on the image to play.
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/puAbpk_hmp0/0.jpg)](https://youtu.be/puAbpk_hmp0)
 
@@ -35,7 +35,7 @@ Project features:
 
 ## Presentation
 
-Click to play.
+Click on the image to play.
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jCLSl4soMps/hqdefault.jpg)](https://youtu.be/jCLSl4soMps)
 
@@ -45,7 +45,7 @@ The following changes were made to the original proposal:
 - A red LED was used instead of a RGB LED since only one color was needed.
 - Instead of the red LED lighting up after a specific gas concentration, it was coded to light up after a specific temperature instead; this was decided since a high gas concentration could not be safely demonstrated.
 - Due to authentication issues, a webpage was not set up and data was sent over SSH instead.
-- A Raspberry Pi 4 was used instead of the Raspberry Pi 0 due to its additional capabilities.
+- A Raspberry Pi 4 was used instead of the Raspberry Pi 0 due to more powerful specs.
 
 ## Team Members
 - Abigail Drun
