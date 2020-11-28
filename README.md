@@ -37,7 +37,7 @@ Project features:
 
 Click to play.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jCLSl4soMps/0.jpg)](https://youtu.be/jCLSl4soMps)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jCLSl4soMps/hqdefault.jpg)](https://youtu.be/jCLSl4soMps)
 
 ## Changes from Original Proposal
 The following changes were made to the original proposal:
