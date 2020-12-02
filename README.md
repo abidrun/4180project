@@ -1,5 +1,5 @@
 ## 4180 Project - Gas Detection Rover
-A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the controlling computer, while the chemical sensors on the sides will print the concentration of their corresponding gas. A laser temperature sensor will be used to detect human temperature, which will also be printed on the feed. A red LED will indicate whether the chemical sensor is reading over 30 degrees Celsius.
+A Raspberry Pi 4 will be used to add additional functions to a mindtank's built-in system. The MIND tank will be communicated and controlled through a mobile app using wifi. The camera will be on the front of the MIND Tank and send video feedback to the controlling computer, while the chemical sensors on the sides will print the concentration of their corresponding gas. A laser temperature sensor will be used to detect human temperature, which will also be printed on the feed. A red LED will indicate whether the temperature sensor is reading over 30 degrees Celsius.
 
 <img src="https://github.com/abidrun/4180project/blob/main/Gas%20Rover.jpg" alt="" width="400">
 
